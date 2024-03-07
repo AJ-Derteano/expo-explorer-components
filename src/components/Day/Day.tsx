@@ -8,7 +8,7 @@ type DayProps = {
 
 const Day = ({ day }: DayProps) => {
   return (
-    <Link href={`/about`} asChild>
+    <Link href={`day${day}`} asChild>
       <Pressable style={styles.container}>
         <Text style={styles.text}>{day}</Text>
       </Pressable>
