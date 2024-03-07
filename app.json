@@ -31,6 +31,9 @@
     "plugins": [
       "expo-font",
       "expo-router"
-    ]
+    ],
+    "experiments": {
+      "tsconfigPaths": false
+    }
   }
 }
