@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { theme } from '../../theme/theme';
+import { Link } from 'expo-router';
 
 type DayProps = {
   day: number;
@@ -7,9 +8,11 @@ type DayProps = {
 
 const Day = ({ day }: DayProps) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{day}</Text>
-    </View>
+    <Link href={`/about`} asChild>
+      <Pressable style={styles.container}>
+        <Text style={styles.text}>{day}</Text>
+      </Pressable>
+    </Link>
   );
 };
 
@@ -27,7 +30,7 @@ const styles = StyleSheet.create({
     color: theme.colors.text,
   },
   text: {
-    fontFamily: theme.fonts.family.Patrick,
+    fontFamily: theme.fonts.family.AmaticBold,
     fontSize: theme.fonts.size.extraLarge,
     fontWeight: theme.fonts.weight.extraBold,
   },

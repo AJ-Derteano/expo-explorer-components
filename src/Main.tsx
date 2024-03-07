@@ -35,17 +35,4 @@ const Main = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontFamily: theme.fonts.family.AmaticBold,
-    fontSize: theme.fonts.size.extraLarge,
-    // fontWeight: theme.fonts.weight.extraBold,
-  },
-});
-
 export default Main;
