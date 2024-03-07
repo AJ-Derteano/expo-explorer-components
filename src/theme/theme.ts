@@ -6,10 +6,10 @@ export const theme = {
       AmaticBold: 'AmaticBold',
     },
     size: {
-      small: 12,
-      regular: 16,
-      large: 20,
-      extraLarge: 32,
+      small: 18,
+      regular: 24,
+      large: 28,
+      extraLarge: 48,
     },
     weight: {
       light: '200',

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: theme.fonts.family.AmaticBold,
     fontSize: theme.fonts.size.extraLarge,
-    fontWeight: theme.fonts.weight.extraBold,
+    color: theme.colors.text,
   },
 });
 
