@@ -6,7 +6,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "git-push": "cmd /C \"git add . && git commit -m \"$1\" && git push\""
   },
   "dependencies": {
     "@expo-google-fonts/amatic-sc": "^0.2.3",
