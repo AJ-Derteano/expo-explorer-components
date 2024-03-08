@@ -77,6 +77,7 @@ export default function OnBoarding() {
       <View style={styles.stepIndicatorContainer}>
         {onboardingSteps.map((step, index) => (
           <View
+            key={`${step.icon}-step-indicator`}
             style={[
               styles.stepIndicator,
               index === screenIndex && styles.stepIndicatorActive,
