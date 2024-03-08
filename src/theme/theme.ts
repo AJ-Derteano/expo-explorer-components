@@ -1,7 +1,11 @@
 export const theme = {
   fonts: {
     family: {
+      InterLight: 'InterLight',
       Inter: 'Inter',
+      InterMedium: 'InterMedium',
+      InterBold: 'InterBold',
+      InterBlack: 'InterBlack',
       Amatic: 'Amatic',
       AmaticBold: 'AmaticBold',
     },
