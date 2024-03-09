@@ -101,7 +101,7 @@ export default function OnBoarding() {
             <FontAwesome5
               style={styles.image}
               name={data.icon}
-              size={100}
+              size={150}
               color='#CEF202'
             />
           </Animated.View>
@@ -114,7 +114,7 @@ export default function OnBoarding() {
               {data.title}
             </Animated.Text>
             <Animated.Text
-              entering={SlideInRight.delay(150)}
+              entering={SlideInRight.delay(50)}
               exiting={SlideOutLeft}
               style={styles.description}
             >
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 30,
   },
   title: {
     color: '#FDFDFD',
