@@ -16,13 +16,10 @@ import {
   Directions,
 } from 'react-native-gesture-handler';
 import Animated, {
-  BounceInRight,
   FadeIn,
   FadeOut,
-  SlideInLeft,
   SlideInRight,
   SlideOutLeft,
-  SlideOutRight,
 } from 'react-native-reanimated';
 
 const onboardingSteps = [

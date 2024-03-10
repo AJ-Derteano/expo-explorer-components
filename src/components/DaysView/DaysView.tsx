@@ -1,5 +1,6 @@
 import { View, FlatList, StyleSheet } from 'react-native';
 import Day from '../Day/Day';
+import { classSyllabus } from '../../constants/classSyllabus';
 
 const days = [...Array(24)].map((_, i) => i + 1);
 
@@ -11,7 +12,9 @@ const DaysView = () => {
         contentContainerStyle={[styles.container, styles.space]}
         columnWrapperStyle={styles.space}
         numColumns={2}
-        renderItem={({ item }) => <Day day={item} />}
+        renderItem={({ item }) => (
+          <Day day={item} subject={classSyllabus[item - 1]} />
+        )}
       />
     </View>
   );

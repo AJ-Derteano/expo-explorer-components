@@ -4,13 +4,17 @@ import { Link } from 'expo-router';
 
 type DayProps = {
   day: number;
+  subject: string;
 };
 
-const Day = ({ day }: DayProps) => {
+const Day = ({ day, subject }: DayProps) => {
   return (
     <Link href={`day${day}`} asChild>
       <Pressable style={styles.container}>
-        <Text style={styles.text}>{day}</Text>
+        <View>
+          <Text style={styles.text}>{day}</Text>
+          <Text style={styles.subTitle}>{subject}</Text>
+        </View>
       </Pressable>
     </Link>
   );
@@ -33,6 +37,13 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.family.AmaticBold,
     fontSize: theme.fonts.size.extraLarge,
     color: theme.colors.text,
+    textAlign: 'center',
+  },
+  subTitle: {
+    fontFamily: theme.fonts.family.AmaticBold,
+    fontSize: theme.fonts.size.small,
+    color: theme.colors.text,
+    textAlign: 'center',
   },
 });
 
