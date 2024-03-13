@@ -1,7 +1,6 @@
-import { View, Text, Button } from 'react-native';
+import { View, Button } from 'react-native';
 import React from 'react';
 import { Link, Stack } from 'expo-router';
-import { theme } from '../../../theme/theme';
 import { MarkdownDisplay } from '../../../components/MarkdownDisplay';
 
 const description = `
