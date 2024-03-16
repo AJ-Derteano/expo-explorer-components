@@ -17,11 +17,13 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { View } from 'react-native';
 import LottieView from 'lottie-react-native';
 import AnimatedSplashScreen from '../components/AnimatedSplashScreen';
+import Animated, { FadeIn } from 'react-native-reanimated';
 
 // SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
+  const [splashAnimationFinished, setSplashAnimationFinished] = useState(false);
 
   const [fontsLoaded, fontError] = useFonts({
     InterLight: Inter_300Light,
@@ -40,15 +42,31 @@ export default function RootLayout() {
     }
   }, [fontsLoaded, fontError]);
 
-  if (!appReady) {
-    return <AnimatedSplashScreen />;
+  const showAnimatedSplash = !appReady || !splashAnimationFinished;
+
+  if (!appReady || !splashAnimationFinished) {
+    return (
+      <AnimatedSplashScreen
+        onAnimationFinish={(isCancelled) => {
+          console.log('isCancelled', isCancelled);
+          if (!isCancelled) {
+            setSplashAnimationFinished(true);
+          }
+        }}
+      />
+    );
   }
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Stack screenOptions={{}}>
-        <Stack.Screen name='index' options={{ title: 'Explorer component' }} />
-      </Stack>
+      <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+        <Stack screenOptions={{}}>
+          <Stack.Screen
+            name='index'
+            options={{ title: 'Explorer component' }}
+          />
+        </Stack>
+      </Animated.View>
     </GestureHandlerRootView>
   );
 }

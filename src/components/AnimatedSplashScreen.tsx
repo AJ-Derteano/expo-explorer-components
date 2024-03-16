@@ -1,11 +1,20 @@
 import { View, StyleSheet } from 'react-native';
-import React, { useRef } from 'react';
+import React from 'react';
 import LottieView from 'lottie-react-native';
-import { Stack } from 'expo-router';
+import Animated, { FadeIn, FadeOut, ZoomOut } from 'react-native-reanimated';
 
-const AnimatedSplashScreen = () => {
+type AnimatedSplashScreenProps = {
+  onAnimationFinish: (isCancelled: boolean) => void;
+};
+
+const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
+
+const AnimatedSplashScreen = ({
+  onAnimationFinish,
+}: AnimatedSplashScreenProps) => {
   return (
     <View
+      exiting={FadeOut.duration(300)}
       style={{
         flex: 1,
         alignItems: 'center',
@@ -13,9 +22,11 @@ const AnimatedSplashScreen = () => {
         backgroundColor: '#000000',
       }}
     >
-      <LottieView
+      <AnimatedLottieView
+        exiting={ZoomOut}
         autoPlay
-        loop
+        onAnimationFinish={onAnimationFinish}
+        loop={false}
         style={{
           width: '80%',
           maxWidth: 400,
