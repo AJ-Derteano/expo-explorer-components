@@ -1,11 +1,9 @@
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React, { useRef } from 'react';
 import LottieView from 'lottie-react-native';
 import { Stack } from 'expo-router';
 
-const Animation = () => {
-  const animation = useRef<LottieView>();
-
+const AnimatedSplashScreen = () => {
   return (
     <View
       style={{
@@ -15,11 +13,9 @@ const Animation = () => {
         backgroundColor: '#000000',
       }}
     >
-      <Stack.Screen options={{ headerShown: false }} />
       <LottieView
-        autoPlay={false}
-        loop={false}
-        ref={animation}
+        autoPlay
+        loop
         style={{
           width: '80%',
           maxWidth: 400,
@@ -27,7 +23,7 @@ const Animation = () => {
           // backgroundColor: '#eee',
         }}
         // Find more Lottie files at https://lottiefiles.com/featured
-        source={require('../../../../assets/lottie/pikachu-animation.json')}
+        source={require('../../assets/lottie/pikachu-animation.json')}
       />
     </View>
   );
@@ -45,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Animation;
+export default AnimatedSplashScreen;
