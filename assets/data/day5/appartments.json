@@ -6,7 +6,7 @@
     "price": 80,
     "title": "Cozy Apartment in Miraflores",
     "numberOfStars": 4,
-    "rating": 9.5,
+    "rating": 5,
     "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/406181643.jpg?k=5dffd33a1e20cc0bbe68e57fbe395103deefe6562895aa1e1f39cc3fa29c0a9e&o=&hp=1"
   },
   {
@@ -16,7 +16,7 @@
     "price": 100,
     "title": "Luxury Condo in San Isidro",
     "numberOfStars": 5,
-    "rating": 9.8,
+    "rating": 2.1,
     "image": "https://img.jamesedition.com/listing_images/2023/05/04/15/58/47/62690153-4930-4e9f-9203-4d0cc239c70a/je/1100xxs.jpg"
   },
   {
@@ -26,7 +26,7 @@
     "price": 60,
     "title": "Modern Studio in Barranco",
     "numberOfStars": 4,
-    "rating": 9.2,
+    "rating": 3.5,
     "image": "https://lbcdn.airpaz.com/hotelimages/4447596/splendid-loft-with-balcony-in-barranco-317f5d5fd312ddf32a4be8fae2b65a5b.jpg"
   },
   {
@@ -36,7 +36,7 @@
     "price": 120,
     "title": "Penthouse with Ocean View",
     "numberOfStars": 5,
-    "rating": 9.7,
+    "rating": 4.7,
     "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/498792997.jpg?k=a8c478fbe9496993942215bd47fa643f3d04aff791b96c285a2621bf8393a52f&o=&hp=1"
   },
   {
@@ -46,7 +46,7 @@
     "price": 70,
     "title": "Charming Loft in Miraflores",
     "numberOfStars": 4,
-    "rating": 9.3,
+    "rating": 4.9,
     "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/463434668.jpg?k=96a9b54a1daf010229fa590dc1d9700cbce8b1d0c671d995ac9188c1c05d0661&o=&hp=1"
   }
 ]

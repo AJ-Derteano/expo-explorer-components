@@ -1,12 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Stack } from 'expo-router';
 
-import appatments from '../../../../assets/data/day5/appartments.json';
+import apartments from '../../../../assets/data/day5/appartments.json';
 import CustomMarker from '../../../components/CustomMarker';
+import ApartmentListItem from '../../../components/ApartmentListItem';
 
 const AirbnbScreen = () => {
+  const [selectedApartment, setSelectedApartment] = useState(null);
+
   return (
     <View>
       <Stack.Screen
@@ -24,10 +27,20 @@ const AirbnbScreen = () => {
           longitudeDelta: 0.0421,
         }}
       >
-        {appatments.map((apartment, index) => {
-          return <CustomMarker key={apartment.id} apartment={apartment} />;
+        {apartments.map((apartment, index) => {
+          return (
+            <CustomMarker
+              key={apartment.id}
+              apartment={apartment}
+              onPress={() => {
+                setSelectedApartment(apartment);
+              }}
+            />
+          );
         })}
       </MapView>
+
+      {selectedApartment && <ApartmentListItem apartment={selectedApartment} />}
     </View>
   );
 };
