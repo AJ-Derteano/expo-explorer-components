@@ -1,7 +1,8 @@
-import { StyleSheet, View } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Stack } from 'expo-router';
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 
 import apartments from '../../../../assets/data/day5/appartments.json';
 import CustomMarker from '../../../components/CustomMarker';
@@ -9,6 +10,15 @@ import ApartmentListItem from '../../../components/ApartmentListItem';
 
 const AirbnbScreen = () => {
   const [selectedApartment, setSelectedApartment] = useState(null);
+
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  // callbacks
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
+  const snapPoints = useMemo(() => ['5%', '50%', '90%'], []);
 
   return (
     <View>
@@ -41,6 +51,16 @@ const AirbnbScreen = () => {
       </MapView>
 
       {selectedApartment && <ApartmentListItem apartment={selectedApartment} />}
+
+      <BottomSheet
+        ref={bottomSheetRef}
+        onChange={handleSheetChanges}
+        snapPoints={snapPoints}
+      >
+        <BottomSheetView style={styles.contentContainer}>
+          <Text>Awesome 🎉</Text>
+        </BottomSheetView>
+      </BottomSheet>
     </View>
   );
 };
@@ -54,5 +74,10 @@ const styles = StyleSheet.create({
   map: {
     width: '100%',
     height: '100%',
+  },
+  contentContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+    padding: 16,
   },
 });
